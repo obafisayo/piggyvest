@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap";
+@font-face {
+    font-family: Eina01-Bold;
+    src: url(fonts/Eina01-Bold.8637c276e69661847b3850c90114c8c7.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: Eina01-BoldItalic;
+    src: url(fonts/Eina01-Bold.8637c276e69661847b3850c90114c8c7.ttf) format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: Eina01-SemiBold;
+    src: url(fonts/Eina01-SemiBold.d5d9ec80f34bc41228aee64f28454523.ttf) format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+    font-family: Eina01-SemiBoldItalic;
+    src: url(fonts/Eina01-SemiBold.d5d9ec80f34bc41228aee64f28454523.ttf) format("truetype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: Eina01-Regular;
+    src: url(fonts/Eina01-Regular.2f3ebc72a376a3305bfc34d674e6e11b.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* @font-face {
+    font-family: Eina01-RegularItalics;
+    src: url(/_next/static/media/Eina01-RegularItalic.25e7ff32249aed6082af1b5ef2042269.ttf) format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap
+} */
+
+/* @font-face {
+    font-family: Eina01-Light;
+    src: url(/_next/static/media/Eina01-Light.89a3530eed24aea09b202be690eee9eb.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap
+} */
+
+/* @font-face {
+    font-family: Eina01-LightItalics;
+    src: url(/_next/static/media/Eina01-LightItalic.c9f646957ec602ed5a100a583ff0b578.ttf) format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap
+} */
+
+*,:after,:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+body,html {
+    padding: 0;
+    margin: 0;
+    font-family: Eina01-Regular,sans-serif!important;
+    background: #f2f7f8;
+    color: #3d4f60;
+    line-height: 27.2px;
+    font-size: 16px;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Eina01-Bold!important;
+    font-weight: 700;
+    color: #122231
+}
+
+a {
+    font-weight: 600!important
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0
+}
+
+h1 {
+    font-size: 65px;
+    line-height: 82.42px
+}
+
+h2 {
+    font-size: 51px;
+    line-height: 64.1px
+}
+
+h3 {
+    font-size: 38px;
+    line-height: 48.08px
+}
+
+h4 {
+    font-size: 33px;
+    line-height: 41.21px
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 25.18px
+}
+
+h6 {
+    font-size: 12.82px
 }
