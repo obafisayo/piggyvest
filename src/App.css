@@ -82,7 +82,10 @@ body,html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
-
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
 h1,h2,h3,h4,h5,h6 {
     font-family: Eina01-Bold!important;
     font-weight: 700;
@@ -124,4 +127,25 @@ h5 {
 
 h6 {
     font-size: 12.82px
+}
+[class*=col-] {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+a, a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+a:visited {
+    color: inherit;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    display: inline-block;
 }
