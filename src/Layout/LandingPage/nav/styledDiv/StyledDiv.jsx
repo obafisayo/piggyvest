@@ -49,7 +49,7 @@ export const Div = styled.div`
           grid-gap: 20px;
           gap: 20px;
           @media only screen and (max-width: 992px) {
-               grid-template-columns: ;
+               /* grid-template-columns: ; */
           }
      }
 `;
