@@ -1,13 +1,14 @@
 import React from "react";
-import styled from "styled-components"
-import PiggyvestLogo from "../assets/piggyvest_logo.svg"
-import Compliance from "../assets/compliance.webp"
-import facebook from "../assets/facebook.svg"
-import twitter from "../assets/twitter.svg"
-import instagram from "../assets/instagram.svg"
-import tiktok from "../assets/tiktok.svg"
-import youtube from "../assets/youtube.svg"
+import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+import PiggyvestLogo from "../../../assets/static/svg/piggyvest_logo.svg"
+import Compliance from "../../../assets/static/img/compliance.webp"
+import facebook from "../../../assets/static/svg/facebook.svg"
+import twitter from "../../../assets/static/svg/twitter.svg"
+import instagram from "../../../assets/static/svg/instagram.svg"
+import tiktok from "../../../assets/static/svg/tiktok.svg"
+import youtube from "../../../assets/static/svg/youtube.svg"
 
 const StyledFooter = styled.footer`
     padding: 80px 16px 50px;
@@ -71,6 +72,10 @@ const StyledFooter = styled.footer`
         font-size: 14px;
         margin-bottom: 8px;
         line-height: 22.08px;
+    }
+    [class*=col-] p {
+        font-family: Eina01-Bold !important;
+        color: #122231;
     }
     .socials ul {
         margin-bottom: 5px;
@@ -162,9 +167,28 @@ const StyledFooter = styled.footer`
     }
     
     @media screen and (max-width: 928px){
-        /* padding-bottom: 10px; */
+        padding-bottom: 10px;
+        .connect {
+            -webkit-order: 4;
+            -moz-box-ordinal-group: 5;
+            order: 4;
+        }
+        .connect a, .connect p {
+            text-align: left;
+        }
+        .socials {
+            -webkit-align-self: center;
+            align-self: center;
+        }
         .faq .accordion__button h3{
             text-align: left;
+        }
+    }
+    @media screen and (max-width: 1000px){
+        .socials ul {
+            -webkit-justify-content: flex-start;
+            -moz-box-pack: start;
+            justify-content: flex-start;
         }
     }
 `;

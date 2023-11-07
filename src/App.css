@@ -65,8 +65,6 @@
 } */
 
 *,:after,:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -79,13 +77,11 @@ body,html {
     line-height: 27.2px;
     font-size: 16px;
     letter-spacing: -.03em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
 }
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     width: 0;
     height: 0;
-}
+} */
 h1,h2,h3,h4,h5,h6 {
     font-family: Eina01-Bold!important;
     font-weight: 700;
@@ -138,9 +134,9 @@ a, a:hover {
     text-decoration: none;
     cursor: pointer;
 }
-a:visited {
+/* a:visited {
     color: inherit;
-}
+} */
 ul {
     list-style: none;
     margin: 0;
