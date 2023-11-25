@@ -39,44 +39,74 @@ function Nav() {
       handleMouseLeave(resourceElement, setResourceDisplay);
     };
   }, []);
-
+const lastEl = navConfig.length - 1;
+const resultant = navConfig.map((nav, index) => (
+  <li key={nav.title}>
+    {(index > 0 && index < lastEl) ?
+      <InternalNavlink theme={"#3d4f60!important;"} to={nav.path} className="list">
+        {nav.title}
+      </InternalNavlink>
+      : index === 0 ? 
+        <span className="pos-rel">
+          <InternalNavlink theme={"#3d4f60!important;"} to={nav.path} ref={saveref} className="list">
+            {nav.title}
+          </InternalNavlink>
+          <Save display={saveDisplay} />
+        </span>
+      :
+        <span className="pos-rel">
+          <InternalNavlink theme={"#3d4f60!important;"} to={nav.path} ref={resourceref} className="list">
+            {nav.title}
+          </InternalNavlink>
+          <Resources display={resourceDisplay} /> 
+        </span>
+    }
+  </li>
+))
   return (
-    <StyledNav className="getNav">
-      {navConfig.map((nav, index) => (
-        <InternalNavlink
-          theme={"#3d4f60!important;"}
-          key={nav.title}
-          to={nav.path}
-          ref={index === 0 ? saveref : (index === navConfig.length - 1 ? resourceref : null)}
-        >
-          {nav.title}
-        </InternalNavlink>
-      ))}
-      <Save display={saveDisplay} />
-      <Resources display={resourceDisplay} />
-    </StyledNav>
+    <StyledDiv className="getNav">
+      <StyledUl>
+        {resultant}
+      </StyledUl>
+    </StyledDiv>
   );
 }
-
-const StyledNav = styled.div`
-  display: flex;
-  gap: 24px;
-  font-weight: 400;
-  transition: all 0.3s ease-in;
+const StyledDiv = styled.div`
   &.menu {
-    place-content: center;
-    position: absolute;
-    display: grid!important;
-    grid-template-columns: 1fr;
-    width: 100%;
-    /* top: 150px; */
-    margin-top: 80%;
+    display: block;
+    margin-top: 17.9%;
     transition: all .3s ease-in;
     opacity: 1!important;
+    font-weight: bold;
+    ul {
+      display: block;
+    }
   }
   @media only screen and (max-width: 992px) {
     display: none;
   }
 `;
+
+const StyledUl = styled.ul`
+  display: flex;
+  gap: 24px;
+  font-weight: 400;
+  transition: all 0.3s ease-in;
+  .pos-rel {
+    position: relative;
+    display: block;
+  }
+  li {
+    list-style: none;
+    text-decoration: none;
+    @media only screen and (max-width: 992px) {
+      display: block;
+      text-align: center;
+      padding-right: 0!important;
+      padding: 15px 0;
+    }
+  }
+`;
+
 
 export default Nav;

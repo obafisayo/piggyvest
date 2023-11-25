@@ -18,6 +18,10 @@ function Hamburger() {
     if (getNav){
       getNav.classList.toggle("menu");
     }
+    const getAuth = document.querySelector('.getAuth');
+    if (getAuth){
+      getAuth.classList.toggle("menu");
+    }
   };
 
   return (
@@ -30,6 +34,10 @@ function Hamburger() {
 }
 
 const StyledDiv = styled.div`
+  position: absolute;
+  top: -16px;
+  right: -20px;
+  padding: 20px;
   display: none;
   transition: all 0.2s ease-in-out;
   @media only screen and (max-width: 992px) {

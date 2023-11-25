@@ -9,7 +9,8 @@ import {
 export const navConfig = [
      {
           title: "Save",
-          path: SAVE
+          path: SAVE,
+          ref: "saveref"
      },
      {
           title: "Invest",
@@ -25,6 +26,7 @@ export const navConfig = [
      },
      {
           title: "Resources",
-          path: RESOURCE
+          path: RESOURCE,
+          ref: "resourceref"
      }
 ];

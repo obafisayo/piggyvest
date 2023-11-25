@@ -7,7 +7,7 @@ import { StyledDiv, Div, Image } from "../styledDiv/StyledDiv";
 function Save({display}) {
 
      return (
-          <StyledDiv $left={"225px"} $mediabottom={"50px"} display={display} className="dropdown-menu">
+          <StyledDiv display={display} className="dropdown-menu">
                <Div className="Dropdown-div">
                     {saveConfig.map((save) => (
                          <InternalNavlink key={save.title} to={save.path} className={save.class}>

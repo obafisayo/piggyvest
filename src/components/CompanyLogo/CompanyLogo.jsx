@@ -8,26 +8,21 @@ import { HOME } from "../../routes/routeConstants";
 
 function CompanyLogo() {
      return(
-          <ButtonLink to={HOME}>
-               <Container>
-                    <img src={Logo} alt="" width="175" height="32"/>
-               </Container>
+          <ButtonLink to={HOME} className={"logo"} style={{display: "flex"}}>
+               <StyledImg src={Logo} alt="" width="225" height="40"/>
           </ButtonLink>
      );
 }
 
-const Container = styled.div`
+const StyledImg = styled.img`
      position: relative;
-     padding-right: 50px;
-     bottom: -1px!important;
-     left: 1px!important;
-     scale: 1.05;
-     z-index: -1;
+     padding-right: 50px!important;
+     bottom: 3px!important;
      @media only screen and (max-width: 992px) {
-          scale: .933;
-          left: -12px!important;
-          bottom: -5px!important;
+          top: 1.6px;
+          bottom: 0!important;
+          padding-right: 0!important;
+          width: 155px;
      }
 `;
-     
 export default CompanyLogo;

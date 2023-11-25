@@ -24,15 +24,25 @@ const StyledButton = styled.button`
      letter-spacing: -.03em;
      cursor: pointer;
      &.bordered {
-          -webkit-transition: border .8s,color .8s;
-          -moz-transition: border .8s,color .8s;
           transition: border .8s,color .8s;
      }
      &.bordered, :hover {
           color: #0c1825!important;
           border: 1px solid #0c1825;
      }
+     .nav-active &.bordered {
+          color: #122231!important;
+          background-color: transparent;
+          border: 1px solid #122231;
+     }
      &.transparent {
           background: transparent;
+     }
+     &.d-blockNfullwidth {
+          display: block;
+          width: 100%;
+          @media only screen and (max-width: 992px) {
+               padding: 18px 22px;
+          }
      }
 `;

@@ -20,11 +20,17 @@ const StyledButton = styled.button`
      border-radius: 12px;
      font-family: Eina01-SemiBold;
      letter-spacing: -.03em;
+     cursor: pointer;
      &.background {
           background: #122231;
-          -webkit-transition: background-color .8s;
-          -moz-transition: background-color .8s;
           transition: background-color .8s;
+     }
+     &.d-blockNfullwidth {
+          display: block;
+          width: 100%;
+          @media only screen and (max-width: 992px) {
+               padding: 18px 22px;
+          }
      }
 `;
 

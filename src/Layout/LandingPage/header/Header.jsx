@@ -61,13 +61,13 @@ const StyledHeader = styled.nav`
         height: 100vh;
         background-color: #f2f7f8;
     }
-    @media only screen and (max-width: 1024px) {
-        padding: 25px 32px;
-    }
     @media only screen and (max-width: 992px) {
         text-align: left;
         margin-top: 0;
         padding: 22px 32px!important;
+    }
+    @media only screen and (max-width: 1024px) {
+        padding: 25px 32px;
     }
 `;
 
@@ -78,4 +78,8 @@ const Container = styled.div`
     max-width: 1165px;
     margin: auto;
     align-items: center;
+    position: relative;
+    @media only screen and (max-width: 1024px) {
+        display: block;
+    }
 `;
