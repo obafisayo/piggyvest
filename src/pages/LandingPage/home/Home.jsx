@@ -1,16 +1,19 @@
 import React from "react";
-import { styled } from "styled-components";
+import HomeHeader from "./HomeHeader/HomeHeader";
+import Investment from "./Investment/Investment";
+import Savings from "./Savings/Savings";
+import OtherInvestment from "./OtherInvestment/OtherInvestment";
+import HomeSaver from "./HomeSaver/HomeSaver";
 
 function Home() {
     return (
-        <StyledMain>
-            <h1 className="hi">This is the Home page</h1>
-        </StyledMain>
+        <div>
+            <HomeHeader />
+            <Investment />
+            <Savings />
+            <OtherInvestment />
+            <HomeSaver />
+        </div>
     );
 }
 export default Home;
-
-const StyledMain = styled.main`
-    padding-top: 150px;
-    padding-bottom: 130px;
-`;

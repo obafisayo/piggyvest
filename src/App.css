@@ -40,34 +40,33 @@
     font-display: swap
 }
 
-/* @font-face {
+@font-face {
     font-family: Eina01-RegularItalics;
-    src: url(/_next/static/media/Eina01-RegularItalic.25e7ff32249aed6082af1b5ef2042269.ttf) format("truetype");
+    src: url(fonts/Eina01-Regular.2f3ebc72a376a3305bfc34d674e6e11b.ttf) format("truetype");
     font-weight: 400;
     font-style: italic;
     font-display: swap
-} */
+}
 
-/* @font-face {
+@font-face {
     font-family: Eina01-Light;
-    src: url(/_next/static/media/Eina01-Light.89a3530eed24aea09b202be690eee9eb.ttf) format("truetype");
+    src: url(fonts/Eina01-Regular.2f3ebc72a376a3305bfc34d674e6e11b.ttf) format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap
-} */
+}
 
-/* @font-face {
+@font-face {
     font-family: Eina01-LightItalics;
-    src: url(/_next/static/media/Eina01-LightItalic.c9f646957ec602ed5a100a583ff0b578.ttf) format("truetype");
+    src: url(fonts/Eina01-Regular.2f3ebc72a376a3305bfc34d674e6e11b.ttf) format("truetype");
     font-weight: 300;
     font-style: italic;
     font-display: swap
-} */
+}
 
 *,:after,:before {
     box-sizing: border-box
 }
-
 body,html {
     padding: 0;
     margin: 0;
@@ -78,12 +77,23 @@ body,html {
     font-size: 16px;
     letter-spacing: -.03em;
 }
-/* @media only screen and (max-width: 992px){
-    body::-webkit-scrollbar {
-        width: 0;
-        height: 0;
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 16px;
     }
+}
+@media only screen and (max-width: 992px) {
+    body {
+        text-align: center!important;
+    }
+}
+/* body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 } */
+:root {
+    --altumcode-spacing: 20px;
+}
 h1,h2,h3,h4,h5,h6 {
     font-family: Eina01-Bold!important;
     font-weight: 700;
@@ -102,7 +112,12 @@ h1 {
     font-size: 65px;
     line-height: 82.42px
 }
-
+@media only screen and (max-width: 992px) {
+    h1 {
+        font-size: 55px;
+        line-height: 72px;
+    }
+}
 h2 {
     font-size: 51px;
     line-height: 64.1px
