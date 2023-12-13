@@ -8,6 +8,10 @@ function Img({src, alt, width, height, className, styles}) {
 }
 
 const Image = styled.img`
+     &.widNheight {
+          width: 100%!important;
+          height: auto!important;
+     }
      &.headerImg {
           @media only screen and (max-width: 600px) {
                width: 330px;

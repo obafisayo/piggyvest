@@ -12,6 +12,16 @@ export const InternalNavlink = styled(RouterLink)`
           display: block;
           color: #122231!important;
      }
+     &.security-link {
+          color: #122231;
+          position: relative;
+          top: 3px;
+          font-family: Eina01-Bold;
+          background-image: linear-gradient(180deg,transparent 65%,#abb7ca 0);
+          background-repeat: no-repeat;
+          background-size: 0 100%;
+          transition: all .2s ease-in;
+     }
      &.dropdown {
           display: flex;
           align-items: center;
