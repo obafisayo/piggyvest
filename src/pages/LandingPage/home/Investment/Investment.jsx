@@ -1,20 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Container from "../../../../components/container/Container";
-import DownSideArrow from "../../../../components/icons/DownSideArrow";
 import SecurityLock from "../../../../components/icons/SecurityLock";
-import EnteredDiv from "../../../../components/Entereddiv/EnteredDiv";
-import { InternalNavlink } from "../../../../components/link/Link";
+import Card from "./Card";
 
 function Investment() {
-     const [isDivEntered, setIsDivEntered] = useState(false);
-     const style = {
-          opacity: isDivEntered ? "1" : "0",
-          transform: isDivEntered ? "translate(0px, 0px)" : "translate(0px, 100px)",
-     }
-     function handleEntered() {
-          setIsDivEntered(true);
-     }
      return (
           <StyledSection className="investment security">
                <Container>
@@ -24,24 +14,13 @@ function Investment() {
                                    <SecurityLock />
                               </Div>
                          </Div>
-                         <Div className="right">
-                              <EnteredDiv classname={"investment security content"} threshold={0.5} whenDivIsentered={handleEntered}>
-                                   <H4 className="title security-title" style={style}>
-                                        Your security is our priority
-                                   </H4>
-                                   <P className="text">
-                                        PiggyVest uses the highest level of Internet Security and it 
-                                        is secured by 256 bits SSL security encryption to ensure 
-                                        that your information is comepletely protected from fraud.
-                                   </P>
-                                   <Div className="flex--2 learn-more">
-                                        <DownSideArrow />
-                                        <InternalNavlink className={"security-link"} to="/security">
-                                                  More on our security measures
-                                        </InternalNavlink>
-                                   </Div>
-                              </EnteredDiv>
-                         </Div>
+                         <Card classname={"right"}
+                         link_text={"More on our security measures"}
+                         title={"Your security is our priority"}>
+                              PiggyVest uses the highest level of Internet Security and it 
+                              is secured by 256 bits SSL security encryption to ensure 
+                              that your information is comepletely protected from fraud.
+                         </Card>
                     </Div>
                </Container>
           </StyledSection>
@@ -56,11 +35,6 @@ const StyledSection = styled.section`
      }
      `;
 const Div = styled.div`
-     &.learn-more {
-          display: flex;
-          align-items: center;
-          margin: 10px 0 0;
-     }
      &.dlgflex {
           @media only screen and (min-width: 992px) {
                display: flex;
@@ -85,40 +59,6 @@ const Div = styled.div`
           top: 2px;
           vertical-align: bottom;
           margin-right: 10px;
-     }
-     &.right {
-          position: relative;
-          width: 100%;
-          padding-right: 15px;
-          padding-left: 15px;
-     }
-`;
-const H4 = styled.h4`
-     translate: none;
-     rotate: none;
-     scale: none;
-     visibility: inherit;
-     transition: all 0.5s ease-in;
-     &.title {
-          font-size: 24px;
-          line-height: 33px;
-          @media only screen and (max-width: 600px) {
-               font-size: 30px!important;
-               line-height: 35px;
-          }
-     }
-`;
-const P = styled.p`
-     margin-top: 16px!important;
-     max-width: 621px;
-     font-size: 16px;
-     @media only screen and (max-width: 600px) {
-          font-size: 16px!important;
-          line-height: 26px;
-     }
-     @media only screen and (max-width: 992px) {
-          margin-left: auto!important;
-          margin-right: auto!important;
      }
 `;
 export default Investment;

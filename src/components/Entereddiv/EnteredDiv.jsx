@@ -50,20 +50,6 @@ const Div = styled.div`
             line-height: 26px;
         }
         @media only screen and (max-width: 992px) {
-            /* max-width: unset; */
-            margin-left: auto!important;
-            margin-right: auto!important;
-        }
-    }
-    &.content {
-        margin-top: 0!important;
-        max-width: 700px;
-        @media only screen and (max-width: 600px) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        @media only screen and (max-width: 992px) {
             margin-left: auto!important;
             margin-right: auto!important;
         }

@@ -8,11 +8,12 @@ function HomeHeader() {
      return (
           <StyledSection className="header header-home">
                <Container classname="container">
-                    <TextCard button title={"The Better Way to Save & Invest"}
-                    text={"Piggyvest helps over 4 million customers achieve     \
-                         their financial goals by helping them save and         \
-                         invest with ease."}
-                    />
+                    <TextCard button h1style pstyle paragraph header1 classname={"home-header"}
+                         title={"The Better Way to Save & Invest"}>
+                         Piggyvest helps over 4 million customers achieve 
+                         their financial goals by helping them save and 
+                         invest with ease.
+                    </TextCard>
                     <MovingImage />
                </Container>
           </StyledSection>
