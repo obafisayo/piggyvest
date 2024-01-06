@@ -2,9 +2,9 @@ import React from "react";
 import WhiteApple from "../../assets/static/svg/white_Apple_Logo.svg";
 import Img from "../img/Img";
 
-function WhiteAppleLogo() {
+function WhiteAppleLogo({width, height}) {
      return (
-          <Img className={"icon"} width={"18"} height={"24"} src={WhiteApple} alt={"download-apple"}/>
+          <Img className={"icon"} width={width} height={height} src={WhiteApple} alt={"download-apple"}/>
      );
 };
 

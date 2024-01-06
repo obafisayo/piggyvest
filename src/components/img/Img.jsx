@@ -8,6 +8,69 @@ function Img({src, alt, width, height, className, styles}) {
 }
 
 const Image = styled.img`
+     &.customer-img {
+          width: 450px;
+          @media only screen and (max-width: 600px) {
+               width: 350px;
+               max-width: 90vw;
+               display: block;
+               margin: 0 auto;
+          }
+     }
+     &.brand_image1,
+     &.brand_image2,
+     &.brand_image3,
+     &.brand_image5 {
+          width: 160px;
+          height: auto;
+          @media only screen and (max-width: 600px) {
+               width: 149px;
+               height: auto;
+          }
+     }
+     &.brand_image4,
+     &.brand_image6 {
+          width: 160px;
+          height: 40px;
+          @media only screen and (max-width: 600px) {
+               width: 149px;
+          }
+     }
+     &.img-card {
+          width: 100px;
+          position: absolute;
+          visibility: hidden;
+          transition: all .5s ease;
+          bottom: 0;
+          right: -100px;
+     }
+     .active &.img-card {
+          width: 250px;
+          visibility: visible;
+          bottom: 0;
+          right: 20px;
+          @media only screen and (max-width: 600px) {
+               width: 170px;
+               right: 16px;
+          }
+     }
+     .invest &.img-card {
+          width: 437px;
+          position: absolute;
+          right: 4rem;
+          @media only screen and (max-width: 1024px) {
+               all: unset;
+               width: 400px;
+               position: relative;
+               bottom: -37px;
+          }
+          @media only screen and (max-width: 600px) {
+               all: unset;
+               width: 80vw;
+               position: relative;
+               bottom: -37px;
+          }
+     }
      &.widNheight {
           width: 100%!important;
           height: auto!important;

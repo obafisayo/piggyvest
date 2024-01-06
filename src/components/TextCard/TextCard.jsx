@@ -4,7 +4,7 @@ import styled from "styled-components";
 import EnteredDiv from "../Entereddiv/EnteredDiv";
 import DownloadButton from "../download_button/Download_btn";
 
-function TextCard({h1style, header4, h4style, pstyle, header1, paragraph, title, children, button, classname}) {
+function TextCard({header3, h1style, header4, h4style, pstyle, header1, paragraph, title, children, button, classname}) {
      const [isDivEntered, setIsDivEntered] = useState(false);
      const [isDivEntered2, setIsDivEntered2] = useState(false);
 
@@ -25,12 +25,13 @@ function TextCard({h1style, header4, h4style, pstyle, header1, paragraph, title,
      }
      return (
           <StyledDiv className={classname}>
-               <EnteredDiv threshold={0.5} whenDivIsentered={handleStyle} classname={"text-card"}>
+               {header3 && <H3 className={classname}>{title}</H3>}
+               {style && <EnteredDiv threshold={0.5} whenDivIsentered={handleStyle} classname={classname}>
                     {header1 && <H1 className={classname} style={h1style? style: {}}>{title}</H1>}
                     {header4 && <H4 className={classname} style={h4style? style: {}}>{title}</H4>}
                     {paragraph && <P className={classname} style={pstyle? style1: {}}>{children}</P>}
-               </EnteredDiv>
-               {button && <DownloadButton/>}
+               </EnteredDiv>}
+               {button && <DownloadButton classname={"black"} blak/>}
           </StyledDiv>
      );
 };
@@ -51,6 +52,14 @@ const StyledDiv = styled.div`
                margin-top: 0;
           }
      }
+     &.savings {
+        color: #122231;
+        text-align: center;
+        width: 565px;
+        @media only screen and (max-width: 992px) {
+            margin: auto auto -30px;
+        }
+    }
 `;
 const H1 = styled.h1`
      translate: none;
@@ -64,10 +73,23 @@ const H1 = styled.h1`
           font-size: 48px;
           line-height: 56px;
           letter-spacing: -.03em;
+          @media only screen and (max-width: 480px) {
+               font-size: 45px!important;
+          }
           @media only screen and (max-width: 1024px) {
                max-width: unset;
           }
      }  
+`;
+const H3 = styled.h3`
+     font-size: 48px;
+     line-height: 66px;
+     max-width: 350px;
+     margin: auto;
+     @media only screen and (max-width: 600px) {
+          font-size: 30px!important;
+          line-height: 35px;
+     }
 `;
 const H4 = styled.h4`
      translate: none;
@@ -109,6 +131,20 @@ const P = styled.p`
           margin-top: 16px!important;
           max-width: 621px;
           font-size: 16px;
+          @media only screen and (max-width: 600px) {
+               font-size: 16px!important;
+               line-height: 26px;
+          }
+          @media only screen and (max-width: 992px) {
+               margin-left: auto!important;
+               margin-right: auto!important;
+          }
+     }
+     &.savings {
+          margin: 18px auto 53px;
+          font-size: 24px;
+          max-width: 350px;
+          line-height: 35px;
           @media only screen and (max-width: 600px) {
                font-size: 16px!important;
                line-height: 26px;

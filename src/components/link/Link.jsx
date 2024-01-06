@@ -8,6 +8,9 @@ export const InternalNavlink = styled(RouterLink)`
      font-family: Eina01-SemiBold;
      color: ${({theme}) => theme? theme : "#0c1825"};
      cursor: pointer;
+     &.block {
+          display: block;
+     }
      .menu &.list {
           display: block;
           color: #122231!important;

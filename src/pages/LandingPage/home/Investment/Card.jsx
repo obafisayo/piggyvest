@@ -13,7 +13,7 @@ function Card({title, children, classname, link_text}) {
                          {children}
                     </TextCard>
                     <Div className="learn-more">
-                         <DownSideArrow />
+                         <DownSideArrow stroke={"#122231"} width={"24"} height={"24"} viewBox={"0 0 24 24"}/>
                          <InternalNavlink className={"security-link"} to="/security">
                               {link_text}
                          </InternalNavlink>

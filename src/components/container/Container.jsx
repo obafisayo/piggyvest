@@ -16,5 +16,10 @@ const StyledDiv = styled.div`
           display: flex;
           justify-content: center;
      }
+     &.flex-align {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+     }
 `;
 export default Container
