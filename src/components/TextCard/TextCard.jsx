@@ -27,10 +27,11 @@ function TextCard({header3, h1style, header4, h4style, pstyle, header1, paragrap
           <StyledDiv className={classname}>
                {header3 && <H3 className={classname}>{title}</H3>}
                {style && <EnteredDiv threshold={0.5} whenDivIsentered={handleStyle} classname={classname}>
-                    {header1 && <H1 className={classname} style={h1style? style: {}}>{title}</H1>}
-                    {header4 && <H4 className={classname} style={h4style? style: {}}>{title}</H4>}
-                    {paragraph && <P className={classname} style={pstyle? style1: {}}>{children}</P>}
-               </EnteredDiv>}
+                              {header1 && <H1 className={classname} style={h1style? style: {}}>{title}</H1>}
+                              {header4 && <H4 className={classname} style={h4style? style: {}}>{title}</H4>}
+                              {paragraph && <P className={classname} style={pstyle? style1: {}}>{children}</P>}
+                         </EnteredDiv>
+               }
                {button && <DownloadButton classname={"black"} blak/>}
           </StyledDiv>
      );

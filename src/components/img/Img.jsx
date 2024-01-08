@@ -8,6 +8,23 @@ function Img({src, alt, width, height, className, styles}) {
 }
 
 const Image = styled.img`
+     &.static-phone {
+          width: 450px;
+          position: relative;
+          bottom: 10px;
+          z-index: 11;
+          right: 3px;
+          @media only screen and (max-width: 500px) {
+              width: 300px;
+              position: relative;
+              bottom: -21px;
+          }
+          @media only screen and (max-width: 992px) {
+               right: 0;
+               bottom: -15px;
+          }
+     }
+
      &.customer-img {
           width: 450px;
           @media only screen and (max-width: 600px) {

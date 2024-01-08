@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import Container from "../../../components/container/Container";
-import Img from "../../../components/img/Img";
-import Customer_img from "../../../assets/static/img/customer_img.png";
-import DownloadButton from "../../../components/download_button/Download_btn";
+import Container from "../container/Container";
+import Img from "../img/Img";
+import DownloadButton from "../download_button/Download_btn";
 
-function Customer() {
+function FallbackImg({img}) {
      return (
           <Section>
                <Container>
                     <Div className="box">
                          <Div className="left">
-                              <Img src={Customer_img} alt={"customer-img"} className={"customer-img"}/>
+                              <Img src={img} alt={"customer-img"} className={"customer-img"}/>
                          </Div>
                          <Div className="right">
                               <Div className="content">
@@ -91,4 +90,4 @@ const H4 = styled.h4`
           line-height: 35px;
      }
 `;
-export default Customer;
+export default FallbackImg;
