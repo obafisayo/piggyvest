@@ -11,7 +11,7 @@ function DownloadButton({classname, whyte, blak}) {
      return(
           <Div className={`${classname} margin10`}>
                <Div className={`${classname} margin20`}>
-                    <ButtonLink to={"https://apps.apple.com/ng/app/piggyvest/id1263117994"}>
+                    <ButtonLink className={"top"} to={"https://apps.apple.com/ng/app/piggyvest/id1263117994"}>
                          {blak && <SecondaryButton classname={"download-btn"} 
                          icon={<WhiteAppleLogo width={"18"} height={"24"} />} 
                          text={"Get on iPhone"}
@@ -21,7 +21,7 @@ function DownloadButton({classname, whyte, blak}) {
                          text={"Get on iPhone"}
                          />}
                     </ButtonLink>
-                    <ButtonLink to={"https://play.google.com/store/apps/details?id=com.piggybankng.piggy"}>
+                    <ButtonLink className={"top"} to={"https://play.google.com/store/apps/details?id=com.piggybankng.piggy"}>
                          {blak && <SecondaryButton classname={"download-btn"}
                          icon={<PlaystoreIcon width={"24"} height={"24"} />}
                          text={"Get on Android"}

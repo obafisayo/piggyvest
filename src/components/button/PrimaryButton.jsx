@@ -25,8 +25,6 @@ const StyledButton = styled.button`
      cursor: pointer;
      &.bordered {
           transition: border .8s,color .8s;
-     }
-     &.bordered, :hover {
           color: #0c1825!important;
           border: 1px solid #0c1825;
      }

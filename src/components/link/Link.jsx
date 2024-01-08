@@ -58,4 +58,16 @@ export const ButtonLink = styled(RouterLink)`
      text-decoration: none;
      color: ${({theme}) => theme? theme : "#0c1825!important"};
      cursor: pointer;
+     &.top {
+          @media only screen and (min-width: 993px) {
+               .download-btn:hover {
+                    top: -5px;
+                    background: #000;
+               }
+               .transparent:hover {
+                    background: transparent;
+                    border: 1px solid #bbb!important;
+               }
+          }
+     }
 `;
