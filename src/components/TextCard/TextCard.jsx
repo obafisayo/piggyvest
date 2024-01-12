@@ -40,7 +40,7 @@ function TextCard({label, label_img, header3, h1style, header4, h4style, pstyle,
 };
 
 const StyledDiv = styled.div`
-     &.home-header {
+     &.home-header, &.piggy-header{
           min-width: 600px;
           margin-top: 15px;
           @media only screen and (max-width: 1200px) {
@@ -52,6 +52,12 @@ const StyledDiv = styled.div`
           @media only screen and (max-width: 600px) {
                padding-bottom: unset;
                min-width: unset;
+               margin-top: 0;
+          }
+     }
+     &.piggy-header {
+          margin-top: 4px;
+          @media only screen and (max-width: 600px) {
                margin-top: 0;
           }
      }
@@ -70,7 +76,7 @@ const H1 = styled.h1`
      scale: none;
      transition: all 0.5s ease-in;
      visibility: inherit;
-     &.home-header {
+     &.home-header, &.piggy-header {
           max-width: 459px;
           margin-top: -20px;
           font-size: 48px;
@@ -115,7 +121,7 @@ const P = styled.p`
      scale: none;
      transition: all 0.5s ease-in;
      visibility: inherit;
-     &.home-header {
+     &.home-header, &.piggy-header {
           max-width: 380px;
           font-size: 20px;
           line-height: 32px;
@@ -129,6 +135,16 @@ const P = styled.p`
                margin-left: 12px;
                margin-right: 12px;
           }
+     }
+     &.piggy-header {
+          margin-top: 10px;
+          max-width: 570px;
+          @media only screen and (max-width: 1024px) {
+               max-width: unset;
+          }
+          @media only screen and (max-width: 992px) {
+               font-size: 20px;
+          } 
      }
      &.security-text {
           margin-top: 16px!important;

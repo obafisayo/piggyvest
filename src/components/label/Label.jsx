@@ -35,7 +35,7 @@ const P = styled.p`
      &.Automated {
           color: ${theme.palette.PIGGYBLUE};
      }
-     &.safe {
+     &.Fixed {
           color: ${theme.palette.SAFEBLUE};
      }
      &.target {

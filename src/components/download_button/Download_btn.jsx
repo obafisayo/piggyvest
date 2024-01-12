@@ -9,8 +9,8 @@ import PrimaryButton from "../button/PrimaryButton";
 
 function DownloadButton({classname, whyte, blak}) {
      return(
-          <Div className={`${classname} margin10`}>
-               <Div className={`${classname} margin20`}>
+          <Div className={`margin10 ${classname}`}>
+               <Div className={`margin20 ${classname}`}>
                     <ButtonLink className={"top"} to={"https://apps.apple.com/ng/app/piggyvest/id1263117994"}>
                          {blak && <SecondaryButton classname={"download-btn"} 
                          icon={<WhiteAppleLogo width={"18"} height={"24"} />} 
@@ -41,9 +41,16 @@ const Div = styled.div`
      }
      &.black {
           min-width: 548px;
+          @media only screen and (max-width: 992px) {
+               padding-top: 5px;
+               margin-top: 10px!important;
+          }
      }
      &.margin10 {
           margin-top: 10px;
+     }
+     .margin10 &.black {
+          margin-top: 0px;
      }
      &.margin20 {
           margin-top: 20px;

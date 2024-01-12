@@ -76,7 +76,7 @@ function MovingImage({movingImg, smallImg, classname}) {
 }
 
 const StyledDiv = styled.div`
-     &.homeheader {
+     &.home-header {
           position: relative;
           width: 500px;
           min-height: 520px;
@@ -108,11 +108,13 @@ const StyledDiv = styled.div`
           img {
                width: 400px!important;
                bottom: -10px;
+               top: 10px!important;
                position: relative;
                @media only screen and (max-width: 500px) {
                     width: 300px!important;
                     position: relative;
                     bottom: -21px;
+                    top: 21px!important;
                }
           }
      }

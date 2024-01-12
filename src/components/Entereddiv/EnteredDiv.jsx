@@ -42,7 +42,7 @@ function EnteredDiv ({children, classname, threshold, whenDivIsentered, whenYouL
     )
 }
 const Div = styled.div`
-    &.home-header { 
+    &.home-header, &.piggy-header { 
         max-width: 93vw;
         @media only screen and (max-width: 600px) {
             width: 95%;

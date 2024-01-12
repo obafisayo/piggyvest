@@ -6,14 +6,17 @@ import Piggylogo from "../../../../assets/static/svg/piggy-label.svg";
 import Floating_Piggy from "../../../../assets/static/img/floating_piggy.png";
 function PiggyHeader() {
      return(
-          <PageHeader staticImg={Piggybank_header}
+          <PageHeader 
+               staticImg={Piggybank_header}
+               classname={"piggy-header"}
                moving
                movingImg={Floating_Piggy}
                moving_class={"static"}
                background={theme.palette.PIGGYBLUE}
                label={"Automated savings"}
                label_img={Piggylogo}
-               title={"Piggybank"}>
+               title={"Piggybank"}
+          >
                Strict daily, weekly or monthly automatic savings. Earn up to 10% p.a.
           </PageHeader>
      );

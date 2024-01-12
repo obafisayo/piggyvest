@@ -11,7 +11,7 @@ const Image = styled.img`
      &.static-phone {
           width: 450px;
           position: relative;
-          bottom: 10px;
+          bottom: 0px;
           z-index: 11;
           right: 3px;
           @media only screen and (max-width: 500px) {

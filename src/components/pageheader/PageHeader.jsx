@@ -5,15 +5,15 @@ import TextCard from "../TextCard/TextCard";
 import MovingImage from "../movingImage/MovingImage";
 import Img from "../img/Img";
 
-function PageHeader({title, moving, movingImg, smallImg, staticImg, children, background, label, label_img, moving_class}) {
+function PageHeader({classname, title, moving, movingImg, smallImg, staticImg, children, background, label, label_img, moving_class}) {
      const style = {
           opacity: "1",
           visibility: "inherit"
      }
      return (
-          <StyledSection className="header header-home backgroundNcolor" background={background}>
-               <Container classname="container">
-                    <TextCard button h1style pstyle paragraph header1 classname={"home-header"}
+          <StyledSection className={`header backgroundNcolor ${classname}`} background={background}>
+               <Container classname={`container ${classname}`}>
+                    <TextCard button h1style pstyle paragraph header1 classname={classname}
                          label={label}
                          label_img={label_img}
                          title={title}>
@@ -43,10 +43,22 @@ const StyledSection = styled.section`
                padding-bottom: 10px;
           }
      }
-     &.header-home {
+     &.home-header {
           padding: 0;
           @media only screen and (max-width: 600px) {
                padding-bottom: 20px;
+          }
+     }
+     &.piggy-header {
+          padding: 0;
+          @media only screen and (max-width: 600px) {
+               padding-bottom: 13px;
+          }
+     }
+     &.piggy-header .container {
+          padding: 180px 0 0;
+          @media only screen and (max-width: 992px) {
+               padding: 0!important;
           }
      }
      .container {
