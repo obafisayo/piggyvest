@@ -5,17 +5,21 @@ import { ButtonLink } from "../../../components/link/Link";
 import { ACCOUNT, SIGNIN, SIGNUP } from "../../../routes/routeConstants"
 import SecondaryButton from "../../../components/button/SecondaryButton";
 
-function AuthNav() {
+function AuthNav({path, scrolled}) {
      return(
           <StyledContainer className="getAuth">
                <li>
                     <ButtonLink to={`${ACCOUNT}/${SIGNIN}`} >
-                         <PrimaryButton text={"Sign in"} classname={"bordered transparent d-blockNfullwidth"}/>
+                         <PrimaryButton path={path} scrolled={scrolled}
+                              text={"Sign in"} classname={"bordered transparent d-blockNfullwidth"}
+                         />
                     </ButtonLink>
                </li>
                <li>
                     <ButtonLink to={`${ACCOUNT}/${SIGNUP}`}>
-                         <SecondaryButton classname={"background d-blockNfullwidth"} text={"Create free account"}/>
+                         <SecondaryButton path={path} scrolled={scrolled}
+                              classname={"background d-blockNfullwidth"} text={"Create free account"}
+                         />
                     </ButtonLink>
                </li>
           </StyledContainer>

@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import Img from "../img/Img";
-import HomeImage from "../../assets/static/img/home_image.avif"
 import flexNairaBox from "../../assets/static/img/Flex-naira-box.avif"
 import investifyBox from "../../assets/static/img/ivestify-box.avif"
 import piggybankBox from "../../assets/static/img/piggybank-box.avif"
@@ -9,7 +8,7 @@ import SafelockBox from "../../assets/static/img/safelock-box.avif"
 import targetBox from "../../assets/static/img/target-savings-box.avif"
 import EnteredDiv from "../Entereddiv/EnteredDiv";
 
-function MovingImage() {
+function MovingImage({movingImg, smallImg, classname}) {
      const [isDivEntered, setIsDivEntered] = useState(false);
      const [isDivEntered1, setIsDivEntered1] = useState(false);
      const [isDivEntered2, setIsDivEntered2] = useState(false);
@@ -61,43 +60,61 @@ function MovingImage() {
           }, 250);
      }
      return(
-          <StyledDiv>
+          <StyledDiv className={classname? classname : ''}>
                <EnteredDiv threshold={0.5} whenDivIsentered={handleEnter}>
-                    <Img styles={styles} src={HomeImage} alt={"card-img"} className={"rel-pos headerImg"}/>
-                    <SmallImgs>
+                    <Img styles={styles} src={movingImg} alt={"card-img"} className={"rel-pos headerImg"}/>
+                    {smallImg && <SmallImgs>
                          <Img className={"absNwidth safe style"} styles={styles1} src={SafelockBox} alt={"card-img"} />
                          <Img className={"absNwidth target style"} styles={styles2} src={targetBox} alt={"card-img"} />
                          <Img className={"absNwidth flexBox style"} styles={styles3} src={flexNairaBox} alt={"card-img"} />
                          <Img className={"absNwidth invest style"} styles={styles4} src={investifyBox} alt={"card-img"} />
                          <Img className={"absNwidth piggy style"} styles={styles5} src={piggybankBox} alt={"card-img"} />
-                    </SmallImgs>
+                    </SmallImgs>}
                </EnteredDiv>
           </StyledDiv>
      );
 }
 
 const StyledDiv = styled.div`
-     position: relative;
-     width: 500px;
-     min-height: 520px;
-     animation: animate 2.3s ease-in-out infinite alternate;
-     &:hover {
-          cursor: pointer;
-          animation-play-state: paused;
-     }
-     @keyframes animate {
-          0% {
-               transform: translateY(0)
+     &.homeheader {
+          position: relative;
+          width: 500px;
+          min-height: 520px;
+          animation: animate 2.3s ease-in-out infinite alternate;
+          &:hover {
+               cursor: pointer;
+               animation-play-state: paused;
           }
-
-          100% {
-               transform: translateY(-20px)
+          @keyframes animate {
+               0% {
+                    transform: translateY(0)
+               }
+     
+               100% {
+                    transform: translateY(-20px)
+               }
+          }
+          @media only screen and (max-width: 600px) {
+               width: 330px;
+               max-width: 85vw;
+               min-height: unset;
           }
      }
-     @media only screen and (max-width: 600px) {
-          width: 330px;
-          max-width: 85vw;
-          min-height: unset;
+     &.static {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 10;
+          img {
+               width: 400px!important;
+               bottom: -10px;
+               position: relative;
+               @media only screen and (max-width: 500px) {
+                    width: 300px!important;
+                    position: relative;
+                    bottom: -21px;
+               }
+          }
      }
 `;
 const SmallImgs = styled.div`

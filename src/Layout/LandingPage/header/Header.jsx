@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import CompanyLogo from "../../../components/CompanyLogo/CompanyLogo";
 import Nav from "../nav/Nav";
@@ -7,6 +8,7 @@ import Hamburger from "../../../components/hamburger/Hamburger";
 
 export const Header = () => {
     const headerRef = useRef(null);
+    const location = useLocation();
     const [scroll, setScroll] = useState(false);
 
     useEffect(() => {
@@ -31,14 +33,14 @@ export const Header = () => {
             headerRefElement.classList.remove('scrolled');
         }
     }, [scroll]);
-
+    const path = location.pathname;
     return (
         <StyledHeader className="getHead" ref={headerRef}>
             <Container>
-                <CompanyLogo />
-                <Hamburger />
-                <Nav />
-                <AuthNav />
+                <CompanyLogo scrolled={scroll} pathname={path} />
+                <Hamburger scrolled={scroll} path={path}/>
+                <Nav path={path} scrolled={scroll} />
+                <AuthNav path={path} scrolled={scroll} />
             </Container>
         </StyledHeader>
     );

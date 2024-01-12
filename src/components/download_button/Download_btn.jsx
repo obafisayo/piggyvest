@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ButtonLink } from "../link/Link";
 import SecondaryButton from "../button/SecondaryButton";
 import WhiteAppleLogo from "../icons/WhiteAppleLogo";
-import BlackAppleLogo from "../icons/blackAppleLogo";
+import BlackAppleLogo from "../icons/BlackAppleLogo";
 import PlaystoreIcon from "../icons/PlaystoreIcon";
 import PrimaryButton from "../button/PrimaryButton";
 

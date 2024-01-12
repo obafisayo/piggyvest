@@ -1,6 +1,7 @@
 import { NavLink as RouterLink} from "react-router-dom";
 
 import styled from "styled-components";
+import { theme } from "../../globalStyles";
 
 export const InternalNavlink = styled(RouterLink)`
      display: inline-block;
@@ -40,16 +41,16 @@ export const InternalNavlink = styled(RouterLink)`
           border-radius: 8px;
           color: #000;
           &.piggy {
-               color: #0d60d8;
+          color: ${theme.palette.PIGGYBLUE};
           }
           &.safe {
-               color: #2295f2;
+               color: ${theme.palette.SAFEBLUE};
           }
           &.target {
-               color: #10b259;
+               color: ${theme.palette.TARGETGREEN};
           }
           &.naira {
-               color: #ea4fa2;
+               color: ${theme.palette.FLEXPINK};
           }
      }
 `;

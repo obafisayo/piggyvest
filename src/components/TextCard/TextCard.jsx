@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 import EnteredDiv from "../Entereddiv/EnteredDiv";
 import DownloadButton from "../download_button/Download_btn";
+import Label from "../label/Label";
 
-function TextCard({header3, h1style, header4, h4style, pstyle, header1, paragraph, title, children, button, classname}) {
+function TextCard({label, label_img, header3, h1style, header4, h4style, pstyle, header1, paragraph, title, children, button, classname}) {
      const [isDivEntered, setIsDivEntered] = useState(false);
      const [isDivEntered2, setIsDivEntered2] = useState(false);
 
@@ -29,6 +30,7 @@ function TextCard({header3, h1style, header4, h4style, pstyle, header1, paragrap
                {style && <EnteredDiv threshold={0.5} whenDivIsentered={handleStyle} classname={classname}>
                               {header1 && <H1 className={classname} style={h1style? style: {}}>{title}</H1>}
                               {header4 && <H4 className={classname} style={h4style? style: {}}>{title}</H4>}
+                              {label && <Label title={label} className={label} img={label_img} />}
                               {paragraph && <P className={classname} style={pstyle? style1: {}}>{children}</P>}
                          </EnteredDiv>
                }

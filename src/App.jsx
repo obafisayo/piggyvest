@@ -6,8 +6,8 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 function App() {
   return (
     <>
-      <ScrollToTop />
-      <Router />
+        <ScrollToTop />
+        <Router />
     </>
   );
 }

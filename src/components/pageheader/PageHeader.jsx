@@ -5,7 +5,7 @@ import TextCard from "../TextCard/TextCard";
 import MovingImage from "../movingImage/MovingImage";
 import Img from "../img/Img";
 
-function PageHeader({title, moving, staticImg, children, background}) {
+function PageHeader({title, moving, movingImg, smallImg, staticImg, children, background, label, label_img, moving_class}) {
      const style = {
           opacity: "1",
           visibility: "inherit"
@@ -14,10 +14,12 @@ function PageHeader({title, moving, staticImg, children, background}) {
           <StyledSection className="header header-home backgroundNcolor" background={background}>
                <Container classname="container">
                     <TextCard button h1style pstyle paragraph header1 classname={"home-header"}
+                         label={label}
+                         label_img={label_img}
                          title={title}>
                               {children}
                     </TextCard>
-                    {moving && <MovingImage />}
+                    {moving && <MovingImage movingImg={movingImg} smallImg={smallImg} classname={moving_class}/>}
                     {staticImg && <Img src={staticImg} styles={style} className={"static-phone"}/>}
                </Container>
           </StyledSection>

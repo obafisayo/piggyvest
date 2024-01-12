@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { FLEXDOLLAR, FLEXNAIRA, HOME, INVEST, PIGGYBANK, SAFELOCK, TARGETSAVINGS } from "../../routes/routeConstants";
 
-function SecondaryButton({text, classname, icon}) {
+function SecondaryButton({text, classname, icon, path, scrolled}) {
      return(
-          <StyledButton className={classname ? classname : ""}>
+          <StyledButton className={classname ? classname : ""} path={path} scrolled={scrolled}>
                {icon} {text}
           </StyledButton>
      );
@@ -37,8 +38,34 @@ const StyledButton = styled.button`
           }
      }
      &.background {
-          background: #122231;
           transition: background-color .8s;
+     }
+     ${({ scrolled, path }) =>
+          scrolled && path !== HOME
+               ? `
+          &.background {
+               background: #122231;
+          }
+          `
+               :
+          path !== HOME &&
+          (path === `/${PIGGYBANK}` ||
+          path === `/${SAFELOCK}` ||
+          path === `/${TARGETSAVINGS}` ||
+          path === `/${FLEXDOLLAR}` ||
+          path === `/${FLEXNAIRA}` ||
+          path === `/${INVEST}`)
+               ? `
+          &.background {
+               background: #ffffff;
+               color: #122231!important;
+          }
+          `
+               : `
+          &.background {
+               background: #122231;
+          }
+          `
      }
      &.d-blockNfullwidth {
           display: block;
