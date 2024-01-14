@@ -8,7 +8,7 @@ function SafelockHeader() {
     return (
         <PageHeader
             staticImg={Safelock_header}
-            classname={"piggy-header"}
+            classname={"other-header"}
             moving
             movingImg={Floating_Safe}
             moving_class={"static"}

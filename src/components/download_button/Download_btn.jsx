@@ -12,8 +12,12 @@ function DownloadButton({classname, whyte, blak}) {
           <Div className={`margin10 ${classname}`}>
                <Div className={`margin20 ${classname}`}>
                     <ButtonLink className={"top"} to={"https://apps.apple.com/ng/app/piggyvest/id1263117994"}>
-                         {blak && <SecondaryButton classname={"download-btn"} 
-                         icon={<WhiteAppleLogo width={"18"} height={"24"} />} 
+                         {blak && <SecondaryButton classname={`download-btn ${classname}`}
+                         icon={classname.includes("white")?
+                              <BlackAppleLogo width={"18"} height={"24"} />
+                                   :
+                              <WhiteAppleLogo width={"18"} height={"24"} />
+                         } 
                          text={"Get on iPhone"}
                          />}
                          {whyte && <PrimaryButton classname={"download-btn bordered transparent"} 
@@ -22,7 +26,7 @@ function DownloadButton({classname, whyte, blak}) {
                          />}
                     </ButtonLink>
                     <ButtonLink className={"top"} to={"https://play.google.com/store/apps/details?id=com.piggybankng.piggy"}>
-                         {blak && <SecondaryButton classname={"download-btn"}
+                         {blak && <SecondaryButton classname={`download-btn ${classname}`}
                          icon={<PlaystoreIcon width={"24"} height={"24"} />}
                          text={"Get on Android"}
                          />}
@@ -37,9 +41,8 @@ function DownloadButton({classname, whyte, blak}) {
 };
 const Div = styled.div`
      &.white {
-
      }
-     &.black {
+     &.other-header {
           min-width: 548px;
           @media only screen and (max-width: 992px) {
                padding-top: 5px;

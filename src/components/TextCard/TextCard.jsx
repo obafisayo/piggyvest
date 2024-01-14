@@ -34,13 +34,13 @@ function TextCard({label, label_img, header3, h1style, header4, h4style, pstyle,
                               {paragraph && <P className={classname} style={pstyle? style1: {}}>{children}</P>}
                          </EnteredDiv>
                }
-               {button && <DownloadButton classname={"black"} blak/>}
+               {button && <DownloadButton classname={classname} blak/>}
           </StyledDiv>
      );
 };
 
 const StyledDiv = styled.div`
-     &.home-header, &.piggy-header{
+     &.home-header, &.other-header{
           min-width: 600px;
           margin-top: 15px;
           @media only screen and (max-width: 1200px) {
@@ -55,7 +55,7 @@ const StyledDiv = styled.div`
                margin-top: 0;
           }
      }
-     &.piggy-header {
+     &.other-header {
           margin-top: 4px;
           @media only screen and (max-width: 600px) {
                margin-top: 0;
@@ -76,7 +76,7 @@ const H1 = styled.h1`
      scale: none;
      transition: all 0.5s ease-in;
      visibility: inherit;
-     &.home-header, &.piggy-header {
+     &.home-header, &.other-header {
           max-width: 459px;
           margin-top: -20px;
           font-size: 48px;
@@ -121,7 +121,7 @@ const P = styled.p`
      scale: none;
      transition: all 0.5s ease-in;
      visibility: inherit;
-     &.home-header, &.piggy-header {
+     &.home-header, &.other-header {
           max-width: 380px;
           font-size: 20px;
           line-height: 32px;
@@ -136,7 +136,7 @@ const P = styled.p`
                margin-right: 12px;
           }
      }
-     &.piggy-header {
+     &.other-header {
           margin-top: 10px;
           max-width: 570px;
           @media only screen and (max-width: 1024px) {

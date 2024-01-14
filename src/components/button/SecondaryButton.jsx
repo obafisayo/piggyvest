@@ -37,6 +37,10 @@ const StyledButton = styled.button`
                margin: 0 8px;
           }
      }
+     &.white {
+          background: #ffffff;
+          color: #122231!important;
+     }
      &.background {
           transition: background-color .8s;
      }

@@ -38,14 +38,17 @@ const P = styled.p`
      &.Fixed {
           color: ${theme.palette.SAFEBLUE};
      }
-     &.target {
+     &.Goal-oriented {
           color: ${theme.palette.TARGETGREEN};
      }
-     &.flexnaira {
+     &.Flexible {
           color: ${theme.palette.FLEXPINK};
      }
      &.Dollar {
           color: ${theme.palette.FLEXBLACK};
+     }
+     &.Up {
+          color: ${theme.palette.INVESTPURPLE};
      }
 `;
 export default Label;

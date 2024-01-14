@@ -8,7 +8,7 @@ function PiggyHeader() {
      return(
           <PageHeader 
                staticImg={Piggybank_header}
-               classname={"piggy-header"}
+               classname={"other-header"}
                moving
                movingImg={Floating_Piggy}
                moving_class={"static"}

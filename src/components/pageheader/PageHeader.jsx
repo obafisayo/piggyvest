@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Container from "../container/Container";
 import TextCard from "../TextCard/TextCard";
 import MovingImage from "../movingImage/MovingImage";
 import Img from "../img/Img";
+import EnteredDiv from "../Entereddiv/EnteredDiv";
 
-function PageHeader({classname, title, moving, movingImg, smallImg, staticImg, children, background, label, label_img, moving_class}) {
+function PageHeader({classname, title,
+     moving, movingImg,
+     smallImg, staticImg,
+     children, background,
+     label, label_img, 
+     moving_class
+}) {
+     const [entered, setEntered] = useState(false);
      const style = {
-          opacity: "1",
-          visibility: "inherit"
+          opacity: entered? "1" : "0",
+          visibility: entered? "inherit" : "none",
+          transition: "all 0.5s ease-in"
+     }
+     function handleEnter() {
+          setEntered(true)
      }
      return (
           <StyledSection className={`header backgroundNcolor ${classname}`} background={background}>
@@ -20,7 +32,11 @@ function PageHeader({classname, title, moving, movingImg, smallImg, staticImg, c
                               {children}
                     </TextCard>
                     {moving && <MovingImage movingImg={movingImg} smallImg={smallImg} classname={moving_class}/>}
-                    {staticImg && <Img src={staticImg} styles={style} className={"static-phone"}/>}
+                    {staticImg && 
+                         <EnteredDiv threshold={0.5} whenDivIsentered={handleEnter} classname={"static"}>
+                              <Img src={staticImg} styles={style} className={"static-phone"}/>
+                         </EnteredDiv>
+                    }
                </Container>
           </StyledSection>
      );
@@ -49,13 +65,13 @@ const StyledSection = styled.section`
                padding-bottom: 20px;
           }
      }
-     &.piggy-header {
+     &.other-header {
           padding: 0;
           @media only screen and (max-width: 600px) {
                padding-bottom: 13px;
           }
      }
-     &.piggy-header .container {
+     &.other-header .container {
           padding: 180px 0 0;
           @media only screen and (max-width: 992px) {
                padding: 0!important;

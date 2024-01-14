@@ -1,10 +1,15 @@
 import React from "react";
+import styled from "styled-components";
+import TargetsHeader from "./targetsHeader/TargetsHeader";
 
-function Target() {
+function Targets() {
     return (
-        <>
-        This is Target savings
-        </>
+        <Div>
+            <TargetsHeader />
+        </Div>
     );
 };
-export default Target;
+
+const Div = styled.div`
+`;
+export default Targets;
