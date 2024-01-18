@@ -1,29 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
-import styled from "styled-components";
+import React, { useEffect, useRef } from "react";
+import styled, { StyleSheetManager } from "styled-components";
 import CompanyLogo from "../../../components/CompanyLogo/CompanyLogo";
 import Nav from "../nav/Nav";
 import AuthNav from "../nav/AuthNav";
 import Hamburger from "../../../components/hamburger/Hamburger";
+import { useScrollContext } from "../../../ScrollContext";
 
 export const Header = () => {
     const headerRef = useRef(null);
-    const location = useLocation();
-    const [scroll, setScroll] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setScroll(true);
-            } else {
-                setScroll(false);
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    const { path, scroll } = useScrollContext()
 
     useEffect(() => {
         const headerRefElement = headerRef.current;
@@ -33,16 +18,18 @@ export const Header = () => {
             headerRefElement.classList.remove('scrolled');
         }
     }, [scroll]);
-    const path = location.pathname;
+
     return (
-        <StyledHeader className="getHead" ref={headerRef}>
-            <Container>
-                <CompanyLogo scrolled={scroll} pathname={path} />
-                <Hamburger scrolled={scroll} path={path}/>
-                <Nav path={path} scrolled={scroll} />
-                <AuthNav path={path} scrolled={scroll} />
-            </Container>
-        </StyledHeader>
+        <StyleSheetManager shouldForwardProp={(prop) => prop !== "scrolled"}>
+            <StyledHeader className="getHead" ref={headerRef}>
+                <Container>
+                    <CompanyLogo scrolled={scroll} pathname={path} />
+                    <Hamburger scrolled={scroll} path={path}/>
+                    <Nav path={path} scrolled={scroll} />
+                    <AuthNav path={path} scrolled={scroll} />
+                </Container>
+            </StyledHeader>
+        </StyleSheetManager>
     );
 }
 

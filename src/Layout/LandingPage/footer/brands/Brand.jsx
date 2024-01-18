@@ -19,8 +19,8 @@ function Brand() {
                               <H4>As featured in</H4>
                          </Div>
                          <Div className="brands">
-                              {brandsImgConfig.map((brand) => (
-                                   <InternalNavlink to={brand.to}>
+                              {brandsImgConfig.map((brand, index) => (
+                                   <InternalNavlink to={brand.to} key={index}>
                                         <Img src={brand.img} alt={"brand"} className={brand.class}/>
                                    </InternalNavlink>
                               ))}
