@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonLink } from "../link/Link";
 import SecondaryButton from "../button/SecondaryButton";
-import WhiteAppleLogo from "../icons/WhiteAppleLogo";
-import BlackAppleLogo from "../icons/BlackAppleLogo";
+import AppleLogo from "../icons/AppleLogo";
 import PlaystoreIcon from "../icons/PlaystoreIcon";
 import PrimaryButton from "../button/PrimaryButton";
 
@@ -14,14 +13,14 @@ function DownloadButton({classname, whyte, blak}) {
                     <ButtonLink className={"top"} to={"https://apps.apple.com/ng/app/piggyvest/id1263117994"}>
                          {blak && <SecondaryButton classname={`download-btn ${classname}`}
                          icon={classname.includes("white")?
-                              <BlackAppleLogo width={"18"} height={"24"} />
+                              <AppleLogo width={"18"} height={"24"} blak/>
                                    :
-                              <WhiteAppleLogo width={"18"} height={"24"} />
+                              <AppleLogo width={"18"} height={"24"} />
                          } 
                          text={"Get on iPhone"}
                          />}
                          {whyte && <PrimaryButton classname={"download-btn bordered transparent"} 
-                         icon={<BlackAppleLogo width={"16"} height={"20"} />}
+                         icon={<AppleLogo width={"16"} height={"20"} blak />}
                          text={"Get on iPhone"}
                          />}
                     </ButtonLink>
