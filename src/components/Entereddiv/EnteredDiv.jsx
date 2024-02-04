@@ -57,5 +57,17 @@ const Div = styled.div`
             margin-right: auto!important;
         }
     }
+    &.brands {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 0 2rem;
+        gap: 0 2rem;
+        flex-wrap: wrap;
+        @media only screen and (max-width: 600px) {
+            grid-gap: 2rem;
+            gap: 2rem;
+        }
+    }
 `;
 export default EnteredDiv;
