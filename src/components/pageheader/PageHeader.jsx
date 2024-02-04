@@ -25,11 +25,12 @@ function PageHeader({classname, title,
      return (
           <StyledSection className={`header backgroundNcolor ${classname}`} background={background}>
                <Container classname={`container ${classname}`}>
-                    <TextCard button h1style pstyle paragraph header1 classname={classname}
+                    <TextCard button dynamicEl={"h1"} pstyle paragraph dystyle classname={classname}
                          label={label}
                          label_img={label_img}
-                         title={title}>
-                              {children}
+                         title={title}
+                    >
+                         {children}
                     </TextCard>
                     {moving && <MovingImage movingImg={movingImg} smallImg={smallImg} classname={moving_class}/>}
                     {staticImg && 
