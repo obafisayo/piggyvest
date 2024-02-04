@@ -8,7 +8,7 @@ function Card({title, children, classname, link_text}) {
      return (
           <Div className={classname}>
                <Div className={"investment security content"}>
-                    <TextCard header4 paragraph h4style classname={"security-text title"}
+                    <TextCard dynamicEl={"h4"} paragraph dystyle classname={"security-text title"}
                          title={title}>
                          {children}
                     </TextCard>

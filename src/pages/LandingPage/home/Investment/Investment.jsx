@@ -15,11 +15,11 @@ function Investment() {
                               </Div>
                          </Div>
                          <Card classname={"right"}
-                         link_text={"More on our security measures"}
-                         title={"Your security is our priority"}>
-                              PiggyVest uses the highest level of Internet Security and it 
-                              is secured by 256 bits SSL security encryption to ensure 
-                              that your information is comepletely protected from fraud.
+                              link_text={"More on our security measures"}
+                              title={"Your security is our priority"}>
+                                   PiggyVest uses the highest level of Internet Security and it 
+                                   is secured by 256 bits SSL security encryption to ensure 
+                                   that your information is comepletely protected from fraud.
                          </Card>
                     </Div>
                </Container>

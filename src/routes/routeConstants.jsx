@@ -16,8 +16,8 @@ export const FLEXDOLLAR = 'flex-dollar';
 // resources page routes
 export const SAVE = '#save'
 export const BLOG = "https://blog.piggyvest.com/"
-const currentYear = new Date().getFullYear();
-export const REPORT = `reports/${currentYear}`;
+export const CURRENTYEAR = new Date().getFullYear();
+export const REPORT = `reports/${CURRENTYEAR}`;
 export const CALCULATOR = 'savings-calculator';
 export const EBOOK = 'ebook';
 export const COMIC = 'comic';

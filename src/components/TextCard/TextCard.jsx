@@ -5,15 +5,31 @@ import EnteredDiv from "../Entereddiv/EnteredDiv";
 import DownloadButton from "../download_button/Download_btn";
 import Label from "../label/Label";
 
-function TextCard({label, label_img, header3, h1style, header4, h4style, pstyle, header1, paragraph, title, children, button, classname}) {
+const DynamicElement = ({ element, ...restProps }) => {
+  const Element = element;
+
+  return <Element {...restProps} />;
+};
+
+function TextCard({dynamicEl, dystyle, label, label_img, pstyle, paragraph, title, children, button, classname}) {
      const [isDivEntered, setIsDivEntered] = useState(false);
      const [isDivEntered2, setIsDivEntered2] = useState(false);
 
      const style = {
+          translate: "none",
+          rotate: "none",
+          scale: "none",
+          transition: "all 0.5s ease-in",
+          visibility: "inherit",
           opacity: isDivEntered ? "1" : "0",
           transform: isDivEntered ? "translate(0px, 0px)" : "translate(0px, 100px)",
      };
      const style1 = {
+          translate: "none",
+          rotate: "none",
+          scale: "none",
+          transition: "all 0.5s ease-in",
+          visibility: "inherit",
           opacity: isDivEntered2 ? "1" : "0",
           transform: isDivEntered2 ? "translate(0px, 0px)" : "translate(0px, 100px)",
      };
@@ -26,10 +42,8 @@ function TextCard({label, label_img, header3, h1style, header4, h4style, pstyle,
      }
      return (
           <StyledDiv className={classname}>
-               {header3 && <H3 className={classname}>{title}</H3>}
                {style && <EnteredDiv threshold={0.5} whenDivIsentered={handleStyle} classname={classname}>
-                              {header1 && <H1 className={classname} style={h1style? style: {}}>{title}</H1>}
-                              {header4 && <H4 className={classname} style={h4style? style: {}}>{title}</H4>}
+                              {dynamicEl && <DynamicElement element={dynamicEl} style={dystyle? style: {}} >{title}</DynamicElement>}
                               {label && <Label title={label} className={label} img={label_img} />}
                               {paragraph && <P className={classname} style={pstyle? style1: {}}>{children}</P>}
                          </EnteredDiv>
@@ -54,6 +68,19 @@ const StyledDiv = styled.div`
                min-width: unset;
                margin-top: 0;
           }
+          h1 {
+               max-width: 459px;
+               margin-top: -20px;
+               font-size: 48px;
+               line-height: 56px;
+               letter-spacing: -.03em;
+               @media only screen and (max-width: 480px) {
+                    font-size: 45px!important;
+               }
+               @media only screen and (max-width: 1024px) {
+                    max-width: unset;
+               }
+          }
      }
      &.other-header {
           margin-top: 4px;
@@ -61,57 +88,52 @@ const StyledDiv = styled.div`
                margin-top: 0;
           }
      }
-     &.savings {
-        color: #122231;
-        text-align: center;
-        width: 565px;
-        @media only screen and (max-width: 992px) {
-            margin: auto auto -30px;
-        }
-    }
-`;
-const H1 = styled.h1`
-     translate: none;
-     rotate: none;
-     scale: none;
-     transition: all 0.5s ease-in;
-     visibility: inherit;
-     &.home-header, &.other-header {
-          max-width: 459px;
-          margin-top: -20px;
-          font-size: 48px;
-          line-height: 56px;
-          letter-spacing: -.03em;
-          @media only screen and (max-width: 480px) {
-               font-size: 45px!important;
-          }
-          @media only screen and (max-width: 1024px) {
-               max-width: unset;
-          }
-     }  
-`;
-const H3 = styled.h3`
-     font-size: 48px;
-     line-height: 66px;
-     max-width: 350px;
-     margin: auto;
-     @media only screen and (max-width: 600px) {
-          font-size: 30px!important;
-          line-height: 35px;
-     }
-`;
-const H4 = styled.h4`
-     translate: none;
-     rotate: none;
-     scale: none;
-     visibility: inherit;
-     transition: all 0.5s ease-in;
      &.security-text {
-          font-size: 24px;
-          line-height: 33px;
-          @media only screen and (max-width: 600px) {
-               font-size: 30px!important;
-               line-height: 35px;
+          h4 {
+               font-size: 24px;
+               line-height: 33px;
+               @media only screen and (max-width: 600px) {
+                    font-size: 30px!important;
+                    line-height: 35px;
+               }
+          }
+     }
+     &.savings {
+          color: #122231;
+          text-align: center;
+          width: 565px;
+          @media only screen and (max-width: 992px) {
+               margin: auto auto -30px;
+          }
+          h3 {
+               font-size: 48px;
+               line-height: 66px;
+               max-width: 350px;
+               margin: auto;
+               @media only screen and (max-width: 600px) {
+                    font-size: 30px!important;
+                    line-height: 35px;
+               }
+          }
+     }
+     &.infotext {
+          margin-top: 10px;
+          text-align: center;
+          @media only screen and (max-width: 992px) {
+               margin-bottom: 50px;
+          }
+          h2 {
+               font-size: 51px;
+               line-height: 64.1px;
+               @media only screen and (max-width: 480px)  {
+                    font-size: 31px!important;
+                    line-height: 39px!important;
+               }
+               @media only screen and (max-width: 992px) {
+                    margin-bottom: 15px;
+                    font-size: 41px;
+                    line-height: 54px;
+               }
           }
      }
 `;
@@ -174,4 +196,5 @@ const P = styled.p`
           }
      }
 `;
+
 export default TextCard;

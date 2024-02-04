@@ -24,7 +24,9 @@ function Savings() {
           <StyledSection id="save">
                <Container>
                <Div className="box-container">
-               <TextCard paragraph header3 classname={"savings content"} title={"5 ways to build your savings"}>
+               <TextCard paragraph dynamicEl={"h3"} dystyle
+                    classname={"savings content"}
+                    title={"5 ways to build your savings"}>
                     Earn 5%-15% when you save with any of these PiggyVest plans.
                </TextCard>
                {savingsBoxConfig.map((box, index) => (

@@ -1,16 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Container from "../../../../components/container/Container";
 import { InternalNavlink } from "../../../../components/link/Link";
 import Img from "../../../../components/img/Img";
 import { brandsImgConfig } from "../brands/brandsImgConfig";
+import EnteredDiv from "../../../../components/Entereddiv/EnteredDiv";
 
-function Brand() {
-     const style = {
-          opacity: "1",
-          visibility: "inherit",
-          transform: "translate(0px, 0px)",
+function Brand({style}) {
+     const [myStyle, setMyStyle] = useState(false);
+     const [myStyle1, setMyStyle1] = useState(false);
+     const [myStyle2, setMyStyle2] = useState(false);
+     const [myStyle3, setMyStyle3] = useState(false);
+     const [myStyle4, setMyStyle4] = useState(false);
+     const [myStyle5, setMyStyle5] = useState(false);
+     const style1 = {
+          transition: "all 0.5s ease-in",
+          opacity: myStyle1 || myStyle? "1" : "0",
+          visibility: myStyle1 ? "visible" : "hidden"
      }
+     const style2 = {
+          transition: "all 0.5s ease-in",
+          opacity: myStyle2 ? "1" : "0",
+          visibility: myStyle2 ? "visible" : "hidden"
+     }
+     const style3 = {
+          transition: "all 0.5s ease-in",
+          opacity: myStyle3 ? "1" : "0",
+          visibility: myStyle3 ? "visible" : "hidden"
+     }
+     const style4 = {
+          transition: "all 0.5s ease-in",
+          opacity: myStyle4 ? "1" : "0",
+          visibility: myStyle4 ? "visible" : "hidden"
+     }
+     const style5 = {
+          transition: "all 0.5s ease-in",
+          opacity: myStyle5 ? "1" : "0",
+          visibility: myStyle5 ? "visible" : "hidden"
+     }
+     const allstyle = [style1, style2, style3, style3, style4, style5]
+     function handleStyle() {
+          setMyStyle(false);
+          setTimeout(() => {
+               setMyStyle1(true);
+               setTimeout(() => {
+                    setMyStyle2(true);
+                    setTimeout(() => {
+                         setMyStyle3(true);
+                         setTimeout(() => {
+                              setMyStyle4(true);
+                              setTimeout(() => {
+                                   setMyStyle5(true);
+                              }, 250);
+                         }, 250);
+                    }, 250);
+               }, 250);
+          }, 250);
+      }
      return (
           <StyledSection className="featured">
                <Container>
@@ -18,13 +64,15 @@ function Brand() {
                          <Div className="title" style={style}>
                               <H4>As featured in</H4>
                          </Div>
-                         <Div className="brands">
+                         <EnteredDiv threshold={"0.5"} whenDivIsentered={handleStyle} classname="brands">
                               {brandsImgConfig.map((brand, index) => (
                                    <InternalNavlink to={brand.to} key={index}>
-                                        <Img src={brand.img} alt={"brand"} className={brand.class}/>
+                                        <Img src={brand.img} alt={"brand"} 
+                                             className={brand.class} styles={allstyle[index]}
+                                        />
                                    </InternalNavlink>
                               ))}
-                         </Div>
+                         </EnteredDiv>
                     </Div>
                </Container>
           </StyledSection>
@@ -51,18 +99,6 @@ const Div = styled.div`
      &.title {
           @media only screen and (max-width: 992px) {
                padding: 0 0 1.5rem;
-          }
-     }
-     &.brands {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          grid-gap: 0 2rem;
-          gap: 0 2rem;
-          flex-wrap: wrap;
-          @media only screen and (max-width: 600px) {
-               grid-gap: 2rem;
-               gap: 2rem;
           }
      }
 `;
