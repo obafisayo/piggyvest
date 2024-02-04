@@ -9,6 +9,38 @@ export const InternalNavlink = styled(RouterLink)`
      font-family: Eina01-SemiBold;
      color: ${({theme}) => theme? theme : "#0c1825"};
      cursor: pointer;
+     &.footer_a {
+          display: block;
+          text-align: left;
+          font-family: Eina01-Regular;
+          font-weight: 300!important;
+          transition: color .5s;
+          font-size: 14px;
+          margin-bottom: 8px;
+          line-height: 22.08px;
+     }
+     &.footer_li {
+          color: #122231;
+          display: inline;
+          margin-bottom: 0;
+     }
+     &.footer_logo {
+          display: inline-flex;
+          margin-bottom: 25px;
+     }
+     &.text-right {
+          display: block;
+          text-align: right;
+          line-height: 21px;
+          margin-bottom: 15px;
+          font-size: 14px;
+          font-weight: 300!important;
+          font-family: inherit;
+          transition: color .5s;
+          @media only screen and (max-width: 992px) {
+               text-align: left;
+          }
+     }
      &.block {
           display: block;
      }
