@@ -57,9 +57,9 @@ const Div = styled.div`
             order: 1;
             flex: 0 0 50%;
         }
-        @media screen and (max-width: 1200px) {
+        /* @media screen and (max-width: 1200px) {
             flex: 0 0 30%;
-        }
+        } */
     }
     &.company {
         @media only screen and (max-width: 992px) {

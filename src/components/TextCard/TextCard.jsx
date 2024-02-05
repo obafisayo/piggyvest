@@ -118,6 +118,7 @@ const StyledDiv = styled.div`
      }
      &.infotext {
           margin-top: 10px;
+          margin-bottom: 70px;
           text-align: center;
           @media only screen and (max-width: 992px) {
                margin-bottom: 50px;

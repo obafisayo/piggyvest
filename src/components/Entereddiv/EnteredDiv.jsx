@@ -69,5 +69,15 @@ const Div = styled.div`
             gap: 2rem;
         }
     }
+    &.pageinfo {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        @media only screen and (max-width: 1024px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
 `;
 export default EnteredDiv;
