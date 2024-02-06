@@ -96,9 +96,6 @@ const Div = styled.div`
     &.card-content {
         margin: 0 auto;
     }
-    img {
-
-    }
 `;
 
 const H5 = styled.h5`

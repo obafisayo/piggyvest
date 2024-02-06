@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { theme } from "../../globalStyles";
+import EnteredDiv from "../Entereddiv/EnteredDiv";
 
-function InteractDiv({title, children, img, background}) {
+function InteractDiv({title, children, img, background, classname}) {
+    const [set, isSet] = useState(false);
     const style = {
-        opacity: "1",
-        visibility: "inherit"
+        opacity: set ? "1" : "0",
+        visibility: set ? "inherit" : "hidden",
+        transition: "all 0.3s ease-in"
     }
     const style1 = {
         backgroundImage: img,
@@ -15,15 +18,15 @@ function InteractDiv({title, children, img, background}) {
     }
     return (
         <Section className="interact">
-            <Div className="flex">
+            <EnteredDiv threshold={0.5} whenDivIsentered={() => isSet(true)} classname="flex">
                 <Div className="col-md-7 left pd-80" background={background}>
                     <Div className="content" style={style}>
-                        <H2 className="title" background={background}>{title}</H2>
+                        <H2 className={`title ${classname}`} background={background}>{title}</H2>
                         <P className="text">{children}</P>
                     </Div>
                 </Div>
                 <Div className="col-md-5 right" style={style1}></Div>
-            </Div>
+            </EnteredDiv>
         </Section>
     );
 };
@@ -37,11 +40,6 @@ const Section = styled.section`
     }
 `;
 const Div = styled.div`
-    &.flex {
-        @media only screen and (min-width: 993px) {
-            display: flex;
-        }
-    }
     &.left {
         display: flex;
         position: relative;
@@ -94,6 +92,14 @@ const H2 = styled.h2`
         @media only screen and (max-width: 992px) {
             font-size: 41px;
             line-height: 54px;
+        }
+    }
+    &.target {
+        width: 570px!important;
+        font-size: 37px!important;
+        line-height: 54.1px!important;
+        @media only screen and (max-width: 992px) {
+            width: unset!important;
         }
     }
 `;

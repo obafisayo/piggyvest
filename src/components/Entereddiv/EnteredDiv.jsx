@@ -79,5 +79,10 @@ const Div = styled.div`
             margin-right: 0;
         }
     }
+    &.flex {
+        @media only screen and (min-width: 993px) {
+            display: flex;
+        }
+    }
 `;
 export default EnteredDiv;
