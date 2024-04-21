@@ -17,9 +17,10 @@ function SafelockHeader() {
                 background={theme.palette.TARGETGREEN}
                 label={"Goal-oriented Savings"}
                 label_img={Targetlogo}
-                title={"Tatget Savings"}
+                title={"Target Savings"}
             >
-                Reach all your unique savings goals individually, or as a group. Earn up to 8% p.a.
+                Reach all your unique savings goals individually, or as a
+                group. Earn up to 8% p.a.
             </PageHeader>
         </StyleSheetManager>
     );

@@ -5,58 +5,10 @@ import { InternalNavlink } from "../../../../components/link/Link";
 import Img from "../../../../components/img/Img";
 import { brandsImgConfig } from "../brands/brandsImgConfig";
 import EnteredDiv from "../../../../components/Entereddiv/EnteredDiv";
+import DisplayStyles from "../../../../components/displayStyles/DisplayStyles";
 
 function Brand({style}) {
      const [myStyle, setMyStyle] = useState(false);
-     const [myStyle1, setMyStyle1] = useState(false);
-     const [myStyle2, setMyStyle2] = useState(false);
-     const [myStyle3, setMyStyle3] = useState(false);
-     const [myStyle4, setMyStyle4] = useState(false);
-     const [myStyle5, setMyStyle5] = useState(false);
-     const style1 = {
-          transition: "all 0.5s ease-in",
-          opacity: myStyle1 || myStyle? "1" : "0",
-          visibility: myStyle1 ? "visible" : "hidden"
-     }
-     const style2 = {
-          transition: "all 0.5s ease-in",
-          opacity: myStyle2 ? "1" : "0",
-          visibility: myStyle2 ? "visible" : "hidden"
-     }
-     const style3 = {
-          transition: "all 0.5s ease-in",
-          opacity: myStyle3 ? "1" : "0",
-          visibility: myStyle3 ? "visible" : "hidden"
-     }
-     const style4 = {
-          transition: "all 0.5s ease-in",
-          opacity: myStyle4 ? "1" : "0",
-          visibility: myStyle4 ? "visible" : "hidden"
-     }
-     const style5 = {
-          transition: "all 0.5s ease-in",
-          opacity: myStyle5 ? "1" : "0",
-          visibility: myStyle5 ? "visible" : "hidden"
-     }
-     const allstyle = [style1, style2, style3, style3, style4, style5]
-     function handleStyle() {
-          setMyStyle(false);
-          setTimeout(() => {
-               setMyStyle1(true);
-               setTimeout(() => {
-                    setMyStyle2(true);
-                    setTimeout(() => {
-                         setMyStyle3(true);
-                         setTimeout(() => {
-                              setMyStyle4(true);
-                              setTimeout(() => {
-                                   setMyStyle5(true);
-                              }, 250);
-                         }, 250);
-                    }, 250);
-               }, 250);
-          }, 250);
-      }
      return (
           <StyledSection className="featured">
                <Container>
@@ -64,12 +16,14 @@ function Brand({style}) {
                          <Div className="title" style={style}>
                               <H4>As featured in</H4>
                          </Div>
-                         <EnteredDiv threshold={"0.5"} whenDivIsentered={handleStyle} classname="brands">
+                         <EnteredDiv threshold={"0.5"} whenDivIsentered={() => setMyStyle(true)} classname="brands">
                               {brandsImgConfig.map((brand, index) => (
                                    <InternalNavlink to={brand.to} key={index}>
-                                        <Img src={brand.img} alt={"brand"} 
-                                             className={brand.class} styles={allstyle[index]}
-                                        />
+                                        <DisplayStyles index={index} showStyle={myStyle}>
+                                             <Img src={brand.img} alt={"brand"} 
+                                                  className={brand.class}
+                                             />
+                                        </DisplayStyles>
                                    </InternalNavlink>
                               ))}
                          </EnteredDiv>

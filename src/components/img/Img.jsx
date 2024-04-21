@@ -8,6 +8,16 @@ function Img({src, alt, width, height, className, styles}) {
 }
 
 const Image = styled.img`
+     &.proposal_img {
+          position: relative;
+          max-width: 360px;
+          transition: box-shadow .3s;
+          object-fit: cover;
+          height: 110px!important;
+          border-radius: 20px 20px 0 0;
+          z-index: 100;
+          width: 100%!important;
+     }
      &.static-phone {
           width: 450px;
           position: relative;

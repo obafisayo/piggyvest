@@ -42,6 +42,18 @@ function EnteredDiv ({children, classname, threshold, whenDivIsentered, whenYouL
     )
 }
 const Div = styled.div`
+    &.main-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: -15px;
+        margin-left: -15px;
+        @media only screen and (max-width: 1024px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
     &.static {
         margin-bottom: -7px;
     }

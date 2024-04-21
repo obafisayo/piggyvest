@@ -18,7 +18,7 @@ function InteractDiv({title, children, img, background, classname}) {
     }
     return (
         <Section className="interact">
-            <EnteredDiv threshold={0.5} whenDivIsentered={() => isSet(true)} classname="flex">
+            <EnteredDiv threshold={0.5} whenDivIsentered={() => isSet(true)} classname={"flex"}>
                 <Div className="col-md-7 left pd-80" background={background}>
                     <Div className="content" style={style}>
                         <H2 className={`title ${classname}`} background={background}>{title}</H2>

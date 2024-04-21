@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TargetsHeader from "./targetsHeader/TargetsHeader";
 import TargetsInfo from "./targetsInfo/TargetsInfo";
 import TargetInteract from "./targetsInteract/TargetsInteract";
+import TargetProposal from "./targetsproposal/TargetProposal";
 
 function Targets() {
     return (
@@ -10,6 +11,7 @@ function Targets() {
             <TargetsHeader />
             <TargetsInfo />
             <TargetInteract />
+            <TargetProposal />
         </Div>
     );
 };

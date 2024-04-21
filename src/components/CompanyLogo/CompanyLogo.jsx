@@ -19,13 +19,16 @@ import {  FLEXDOLLAR,
           SAFELOCK,
           TARGETSAVINGS
 } from "../../routes/routeConstants";
+import { useParams } from "react-router-dom";
 
 function CompanyLogo({scrolled, pathname}) {
      const [logoComponent, setLogoComponent] = useState(Black_Logo);
      const [bottom, setBottom] = useState("3px");
+     const params = useParams();
 
      useEffect(() => {
           // Update the logo based on the current route
+          const id = params.id
           function updateLogo(logo) {
                setLogoComponent(White_logo);
                setBottom("-0.7px")
@@ -49,6 +52,9 @@ function CompanyLogo({scrolled, pathname}) {
                case `/${TARGETSAVINGS}`:
                     updateLogo(Target_logo);
                     break;
+               case `/${TARGETSAVINGS}/${id}`:
+                    setLogoComponent(Target_logo);
+                    break;
                case `/${FLEXNAIRA}`:
                     updateLogo(Naira_logo);
                     break;
@@ -58,12 +64,15 @@ function CompanyLogo({scrolled, pathname}) {
                case `/${INVEST}`:
                     updateLogo(Invest_logo);
                     break;
+               case `/${INVEST}/${id}`:
+                    setLogoComponent(Invest_logo);
+                    break;
                default:
                     setLogoComponent(Black_Logo);
                     setBottom("3px");
                     break;
           }
-     }, [pathname, scrolled]);
+     }, [pathname, scrolled, params]);
 
      return(
           <ButtonLink to={HOME} className={"logo"} style={{display: "flex"}}>

@@ -53,6 +53,8 @@ import {
 import AuthLayout from "../Layout/AuthLayout/AuthLayout";
 import ForgotPassword from "../pages/AuthPage/ForgotPassword";
 import SignUpOTP from "../pages/AuthPage/SignUpOTP";
+import ProposalDetails from "../components/proposaldiv/ProposalDetails";
+import { targetProposalConfig } from "../pages/LandingPage/targets/targetsproposal/targetProposalConfig";
 
 export default function Router() {
     return useRoutes([
@@ -85,12 +87,21 @@ export default function Router() {
                     element: <Invest />
                 },
                 {
+                    path: `${INVEST}/:id`,
+                    element: <ProposalDetails />
+
+                },
+                {
                     path: SAFELOCK,
                     element: <Safelock />
                 },
                 {
                     path: TARGETSAVINGS,
                     element: <Target />
+                },
+                {
+                    path: `${TARGETSAVINGS}/:id`,
+                    element: <ProposalDetails config={targetProposalConfig}/>
                 },
                 {
                     path: FLEXNAIRA,
