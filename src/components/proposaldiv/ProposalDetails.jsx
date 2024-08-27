@@ -13,21 +13,29 @@ function ProposalDetails({ config }) {
     }, [id, config]);
 
     return (
-        <StyledDiv>
+        <StyledDiv className="container">
             {data && (
-                <div>
+                <Box className="box">
                     <Img src={data.img} width={"400px"} height={"350px"}/>
                     <h2>{data.title}</h2>
                     <p>{data.members}</p>
                     <p>{data.permember}</p>
                     <p>{data.days}</p>
-                </div>
+                </Box>
             )}
         </StyledDiv>
     );
 }
 
 const StyledDiv = styled.div`
-`;
+    &.container {
+        padding: 100px;
+    }
+    `;
+const Box = styled.div`
+    &.box {
+        border-top: 1px solid red;
+    } 
+`
 
 export default ProposalDetails;
